@@ -35,35 +35,6 @@ class LogInRepository implements ILogInRepository {
     }
   }
 
-  // @override
-  // Future<bool> getLoginInfo() async {
-
-  //   try {
-  //     final user = _firebaseAuth.currentUser;
-  //     if (user == null) {
-  //       log('No user is currently logged in.');
-  //       return checkAdmin;
-  //     }
-
-  //     final QuerySnapshot querySnapshot = await _firestore
-  //         .collection('user')
-  //         .where('email', isEqualTo: user.email)
-  //         .get();
-
-  //     if (querySnapshot.docs.isNotEmpty) {
-  //       checkAdmin = querySnapshot.docs.first.get('isAdmin');
-  //     } else {
-  //       log('No login information found for the user with email: ${user.email}');
-  //     }
-  //   } on FirebaseException catch (e) {
-  //     log('FirebaseException: $e');
-  //   } catch (e) {
-  //     log('An error occurred: $e');
-  //   }
-
-  //   return checkAdmin;
-  // }
-
   @override
   Future<void> signOut() async {
     await _firebaseAuth.signOut();

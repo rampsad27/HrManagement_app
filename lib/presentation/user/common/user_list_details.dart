@@ -80,7 +80,7 @@ class _UserListDetailsState extends State<UserListDetails> {
                     },
                     icon: const FaIcon(
                       FontAwesomeIcons.envelope,
-                      color: Color.fromARGB(255, 247, 76, 24),
+                      color: Color.fromARGB(255, 201, 145, 128),
                     )),
               ],
             ),

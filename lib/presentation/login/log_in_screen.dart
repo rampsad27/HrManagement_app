@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hr_app_redo/data/respository/googleSignIn_repository.dart';
 import 'package:hr_app_redo/presentation/login/bloc/login_bloc.dart';
 
 class LogInScreen extends StatefulWidget {
@@ -24,16 +26,6 @@ class _LogInScreenState extends State<LogInScreen> {
     });
   }
 
-  void _login() {
-    if (_formKey.currentState!.validate()) {
-      String email = _emailController.text;
-      String password = _passwordController.text;
-      context
-          .read<LogInBloc>()
-          .add(LogInRequested(email: email, password: password));
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocListener<LogInBloc, LogInState>(
@@ -52,52 +44,70 @@ class _LogInScreenState extends State<LogInScreen> {
       child: Form(
         key: _formKey,
         child: Scaffold(
-          body: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
-            child: Center(
-              child: SizedBox(
-                height: 200,
-                width: 300,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TextFormField(
-                      controller: _emailController,
-                      decoration: const InputDecoration(
-                          fillColor: Colors.amber,
-                          border: OutlineInputBorder(),
-                          hintText: 'Email'),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      controller: _passwordController,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                          fillColor: Colors.amber,
-                          border: OutlineInputBorder(),
-                          hintText: 'Password'),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    BlocBuilder<LogInBloc, LogInState>(
-                      builder: (context, state) {
-                        return ElevatedButton(
-                            onPressed: () {
-                              state is LogInLoadInProgress ? null : _login();
-                            },
-                            child: const Text("LogIn"));
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextFormField(
+                    controller: _emailController,
+                    decoration: const InputDecoration(
+                        fillColor: Colors.amber,
+                        border: OutlineInputBorder(),
+                        hintText: 'Email'),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    controller: _passwordController,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                        fillColor: Colors.amber,
+                        border: OutlineInputBorder(),
+                        hintText: 'Password'),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  BlocBuilder<LogInBloc, LogInState>(
+                    builder: (context, state) {
+                      return ElevatedButton(
+                          onPressed: () {
+                            state is LogInLoadInProgress ? null : _login();
+                          },
+                          child: const Text("LogIn"));
+                    },
+                  ),
+                  // const SizedBox(
+                  //   height: 10,
+                  // ),
+                  ElevatedButton(
+                      onPressed: () async {
+                        GoogleSignInRepository googleSignInRepository =
+                            GoogleSignInRepository();
+                        await googleSignInRepository.signInWithGoogle();
                       },
-                    )
-                  ],
-                ),
+                      child: const Center(
+                        child: Text("Sign in with Google "),
+                      ))
+                ],
               ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  void _login() {
+    if (_formKey.currentState!.validate()) {
+      String email = _emailController.text;
+      String password = _passwordController.text;
+      context
+          .read<LogInBloc>()
+          .add(LogInRequested(email: email, password: password));
+    }
   }
 }

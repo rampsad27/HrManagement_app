@@ -64,6 +64,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '521621509248',
     projectId: 'hrmanagement-bc458',
     storageBucket: 'hrmanagement-bc458.appspot.com',
+    androidClientId: '521621509248-knsjgnp10e9mhsasg2micv0b9b5s5g26.apps.googleusercontent.com',
+    iosClientId: '521621509248-aujja0925t3k8hqqlcakdb64vjvrfj2s.apps.googleusercontent.com',
     iosBundleId: 'com.example.hrAppRedo',
   );
 
@@ -73,6 +75,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '521621509248',
     projectId: 'hrmanagement-bc458',
     storageBucket: 'hrmanagement-bc458.appspot.com',
+    androidClientId: '521621509248-knsjgnp10e9mhsasg2micv0b9b5s5g26.apps.googleusercontent.com',
+    iosClientId: '521621509248-aujja0925t3k8hqqlcakdb64vjvrfj2s.apps.googleusercontent.com',
     iosBundleId: 'com.example.hrAppRedo',
   );
 
