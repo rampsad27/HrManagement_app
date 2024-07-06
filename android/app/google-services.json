@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "521621509248",
+    "project_id": "hrmanagement-bc458",
+    "storage_bucket": "hrmanagement-bc458.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521621509248:android:704d2a52aa86c2a9428265",
+        "android_client_info": {
+          "package_name": "com.adminpannel.ap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA7gSUg8bzBACTMb3eIzkeYNxExjUfUOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521621509248:android:af43cd39f142bcca428265",
+        "android_client_info": {
+          "package_name": "com.example.hr_app_redo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA7gSUg8bzBACTMb3eIzkeYNxExjUfUOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521621509248:android:958c11e4264c9f3d428265",
+        "android_client_info": {
+          "package_name": "com.hr.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA7gSUg8bzBACTMb3eIzkeYNxExjUfUOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
