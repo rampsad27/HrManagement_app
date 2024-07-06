@@ -35,7 +35,8 @@ mixin _$UserModel {
   String get eName => throw _privateConstructorUsedError;
   int get eNumber => throw _privateConstructorUsedError;
   String get eRelation => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
+  bool get isAdmin => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -64,7 +65,8 @@ abstract class $UserModelCopyWith<$Res> {
       String eName,
       int eNumber,
       String eRelation,
-      String password});
+      bool isActive,
+      bool isAdmin});
 }
 
 /// @nodoc
@@ -95,7 +97,8 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? eName = null,
     Object? eNumber = null,
     Object? eRelation = null,
-    Object? password = null,
+    Object? isActive = null,
+    Object? isAdmin = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -158,10 +161,14 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.eRelation
           : eRelation // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAdmin: null == isAdmin
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -190,7 +197,8 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String eName,
       int eNumber,
       String eRelation,
-      String password});
+      bool isActive,
+      bool isAdmin});
 }
 
 /// @nodoc
@@ -219,7 +227,8 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? eName = null,
     Object? eNumber = null,
     Object? eRelation = null,
-    Object? password = null,
+    Object? isActive = null,
+    Object? isAdmin = null,
   }) {
     return _then(_$UserModelImpl(
       name: null == name
@@ -282,10 +291,14 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.eRelation
           : eRelation // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
+      isActive: null == isActive
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isAdmin: null == isAdmin
+          ? _value.isAdmin
+          : isAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -309,7 +322,8 @@ class _$UserModelImpl implements _UserModel {
       required this.eName,
       required this.eNumber,
       required this.eRelation,
-      required this.password});
+      required this.isActive,
+      required this.isAdmin});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
@@ -345,11 +359,13 @@ class _$UserModelImpl implements _UserModel {
   @override
   final String eRelation;
   @override
-  final String password;
+  final bool isActive;
+  @override
+  final bool isAdmin;
 
   @override
   String toString() {
-    return 'UserModel(name: $name, position: $position, appliedDate: $appliedDate, picture: $picture, viber: $viber, whatsapp: $whatsapp, cell: $cell, email: $email, address: $address, github: $github, linkedIn: $linkedIn, bio: $bio, eName: $eName, eNumber: $eNumber, eRelation: $eRelation, password: $password)';
+    return 'UserModel(name: $name, position: $position, appliedDate: $appliedDate, picture: $picture, viber: $viber, whatsapp: $whatsapp, cell: $cell, email: $email, address: $address, github: $github, linkedIn: $linkedIn, bio: $bio, eName: $eName, eNumber: $eNumber, eRelation: $eRelation, isActive: $isActive, isAdmin: $isAdmin)';
   }
 
   @override
@@ -377,8 +393,9 @@ class _$UserModelImpl implements _UserModel {
             (identical(other.eNumber, eNumber) || other.eNumber == eNumber) &&
             (identical(other.eRelation, eRelation) ||
                 other.eRelation == eRelation) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin));
   }
 
   @JsonKey(ignore: true)
@@ -400,7 +417,8 @@ class _$UserModelImpl implements _UserModel {
       eName,
       eNumber,
       eRelation,
-      password);
+      isActive,
+      isAdmin);
 
   @JsonKey(ignore: true)
   @override
@@ -433,7 +451,8 @@ abstract class _UserModel implements UserModel {
       required final String eName,
       required final int eNumber,
       required final String eRelation,
-      required final String password}) = _$UserModelImpl;
+      required final bool isActive,
+      required final bool isAdmin}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
@@ -469,7 +488,9 @@ abstract class _UserModel implements UserModel {
   @override
   String get eRelation;
   @override
-  String get password;
+  bool get isActive;
+  @override
+  bool get isAdmin;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>

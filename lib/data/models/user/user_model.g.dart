@@ -23,7 +23,8 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       eName: json['eName'] as String,
       eNumber: (json['eNumber'] as num).toInt(),
       eRelation: json['eRelation'] as String,
-      password: json['password'] as String,
+      isActive: json['isActive'] as bool,
+      isAdmin: json['isAdmin'] as bool,
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
@@ -43,5 +44,6 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'eName': instance.eName,
       'eNumber': instance.eNumber,
       'eRelation': instance.eRelation,
-      'password': instance.password,
+      'isActive': instance.isActive,
+      'isAdmin': instance.isAdmin,
     };

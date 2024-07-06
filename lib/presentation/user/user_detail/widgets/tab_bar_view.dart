@@ -19,31 +19,34 @@ class AppTabBarView extends StatelessWidget {
               // Information Tab
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        _buildEditableTextField(
-                            label: "Phone Number",
-                            value: user.cell.toString(),
-                            suffix: IconButton(
-                              onPressed: () {
-                                _copyToClipboard(
-                                    context, user.eNumber.toString());
-                              },
-                              icon: const Icon(Icons.copy),
-                            )),
-                      ],
-                    ),
-                    _buildEditableTextField(label: "Email", value: user.email),
-                    _buildEditableTextField(
-                        label: "Address", value: user.address, maxLines: 2),
-                    _buildEditableTextField(
-                        label: "GitHub", value: user.github),
-                    _buildEditableTextField(
-                        label: "LinkedIn", value: user.linkedIn),
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          _buildEditableTextField(
+                              label: "Phone Number",
+                              value: user.cell.toString(),
+                              suffix: IconButton(
+                                onPressed: () {
+                                  _copyToClipboard(
+                                      context, user.eNumber.toString());
+                                },
+                                icon: const Icon(Icons.copy),
+                              )),
+                        ],
+                      ),
+                      _buildEditableTextField(
+                          label: "Email", value: user.email),
+                      _buildEditableTextField(
+                          label: "Address", value: user.address, maxLines: 2),
+                      _buildEditableTextField(
+                          label: "GitHub", value: user.github),
+                      _buildEditableTextField(
+                          label: "LinkedIn", value: user.linkedIn),
+                    ],
+                  ),
                 ),
               ),
               // Bio Tab
@@ -101,7 +104,7 @@ class AppTabBarView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: SizedBox(
         // Wrap with SizedBox to provide width constraint
-        width: 326,
+        width: 300,
         child: TextFormField(
           controller: TextEditingController(text: value),
           readOnly: !isEditable,
