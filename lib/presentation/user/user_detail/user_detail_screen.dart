@@ -54,7 +54,7 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                     child: DefaultTabController(
                       length: 3,
                       child: Container(

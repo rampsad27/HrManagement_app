@@ -48,11 +48,11 @@ class _UserListDetailsState extends State<UserListDetails> {
                     children: [
                       Text(
                         widget.user.name,
-                        style: const TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 18),
                       ),
                       Text(
                         widget.user.position,
-                        style: const TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 12),
                       ),
                     ],
                   ),
