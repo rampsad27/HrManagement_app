@@ -46,7 +46,10 @@ class _ListViewVerticalState extends State<ListViewVertical> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: UserListDetails(user: user),
+                    child: UserListDetails(
+                      user: user,
+                      locale: '',
+                    ),
                   ),
                 ),
               );

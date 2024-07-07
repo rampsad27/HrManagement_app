@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hr_app_redo/data/models/user/user_model.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
 class UserListDetails extends StatefulWidget {
+  final String locale;
   final UserModel user;
 
   const UserListDetails({
     super.key,
     required this.user,
+    required this.locale,
   });
 
   @override
@@ -47,11 +48,13 @@ class _UserListDetailsState extends State<UserListDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.user.name,
+                        widget.user.name[widget.locale] ??
+                            widget.user.name['en']!, // Default to English
                         style: const TextStyle(fontSize: 18),
                       ),
                       Text(
-                        widget.user.position,
+                        widget.user.position[widget.locale] ??
+                            widget.user.position['en']!, // Default to English
                         style: const TextStyle(fontSize: 12),
                       ),
                     ],

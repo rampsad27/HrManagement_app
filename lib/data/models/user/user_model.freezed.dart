@@ -20,8 +20,8 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String get name => throw _privateConstructorUsedError;
-  String get position => throw _privateConstructorUsedError;
+  Map<String, String> get name => throw _privateConstructorUsedError;
+  Map<String, String> get position => throw _privateConstructorUsedError;
   String get appliedDate => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
   int get viber => throw _privateConstructorUsedError;
@@ -50,8 +50,8 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String name,
-      String position,
+      {Map<String, String> name,
+      Map<String, String> position,
       String appliedDate,
       String picture,
       int viber,
@@ -104,11 +104,11 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
       appliedDate: null == appliedDate
           ? _value.appliedDate
           : appliedDate // ignore: cast_nullable_to_non_nullable
@@ -182,8 +182,8 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name,
-      String position,
+      {Map<String, String> name,
+      Map<String, String> position,
       String appliedDate,
       String picture,
       int viber,
@@ -232,13 +232,13 @@ class __$$UserModelImplCopyWithImpl<$Res>
   }) {
     return _then(_$UserModelImpl(
       name: null == name
-          ? _value.name
+          ? _value._name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
       position: null == position
-          ? _value.position
+          ? _value._position
           : position // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Map<String, String>,
       appliedDate: null == appliedDate
           ? _value.appliedDate
           : appliedDate // ignore: cast_nullable_to_non_nullable
@@ -307,8 +307,8 @@ class __$$UserModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
-      {required this.name,
-      required this.position,
+      {required final Map<String, String> name,
+      required final Map<String, String> position,
       required this.appliedDate,
       required this.picture,
       required this.viber,
@@ -323,15 +323,29 @@ class _$UserModelImpl implements _UserModel {
       required this.eNumber,
       required this.eRelation,
       required this.isActive,
-      required this.isAdmin});
+      required this.isAdmin})
+      : _name = name,
+        _position = position;
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
+  final Map<String, String> _name;
   @override
-  final String name;
+  Map<String, String> get name {
+    if (_name is EqualUnmodifiableMapView) return _name;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_name);
+  }
+
+  final Map<String, String> _position;
   @override
-  final String position;
+  Map<String, String> get position {
+    if (_position is EqualUnmodifiableMapView) return _position;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_position);
+  }
+
   @override
   final String appliedDate;
   @override
@@ -373,9 +387,8 @@ class _$UserModelImpl implements _UserModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserModelImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
+            const DeepCollectionEquality().equals(other._name, _name) &&
+            const DeepCollectionEquality().equals(other._position, _position) &&
             (identical(other.appliedDate, appliedDate) ||
                 other.appliedDate == appliedDate) &&
             (identical(other.picture, picture) || other.picture == picture) &&
@@ -402,8 +415,8 @@ class _$UserModelImpl implements _UserModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      name,
-      position,
+      const DeepCollectionEquality().hash(_name),
+      const DeepCollectionEquality().hash(_position),
       appliedDate,
       picture,
       viber,
@@ -436,8 +449,8 @@ class _$UserModelImpl implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {required final String name,
-      required final String position,
+      {required final Map<String, String> name,
+      required final Map<String, String> position,
       required final String appliedDate,
       required final String picture,
       required final int viber,
@@ -458,9 +471,9 @@ abstract class _UserModel implements UserModel {
       _$UserModelImpl.fromJson;
 
   @override
-  String get name;
+  Map<String, String> get name;
   @override
-  String get position;
+  Map<String, String> get position;
   @override
   String get appliedDate;
   @override

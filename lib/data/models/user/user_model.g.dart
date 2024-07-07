@@ -8,8 +8,8 @@ part of 'user_model.dart';
 
 _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
     _$UserModelImpl(
-      name: json['name'] as String,
-      position: json['position'] as String,
+      name: Map<String, String>.from(json['name'] as Map),
+      position: Map<String, String>.from(json['position'] as Map),
       appliedDate: json['appliedDate'] as String,
       picture: json['picture'] as String,
       viber: (json['viber'] as num).toInt(),

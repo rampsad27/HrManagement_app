@@ -6,8 +6,8 @@ part 'user_model.g.dart';
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
-    required String name,
-    required String position,
+    required Map<String, String> name,
+    required Map<String, String> position,
     required String appliedDate,
     required String picture,
     required int viber,
