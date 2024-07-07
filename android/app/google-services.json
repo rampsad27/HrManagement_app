@@ -43,42 +43,6 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:521621509248:android:af43cd39f142bcca428265",
-        "android_client_info": {
-          "package_name": "com.example.hr_management"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "521621509248-hps78j7i7c38mfmr6janruokv51gao06.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAA7gSUg8bzBACTMb3eIzkeYNxExjUfUOU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "521621509248-hps78j7i7c38mfmr6janruokv51gao06.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "521621509248-8jhdcc15juv0ig81k34kashpcjekobm2.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.hrManagement"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:521621509248:android:958c11e4264c9f3d428265",
         "android_client_info": {
           "package_name": "com.hr.app"
