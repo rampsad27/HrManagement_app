@@ -1,13 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';
 
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
-    required Map<String, String> name,
-    required Map<String, String> position,
+    String? name,
+    String? position,
     required String appliedDate,
     required String picture,
     required int viber,
@@ -23,8 +22,20 @@ class UserModel with _$UserModel {
     required String eRelation,
     required bool isActive,
     required bool isAdmin,
+    NameLocalisedFields? details,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
+}
+
+@freezed
+class NameLocalisedFields with _$NameLocalisedFields {
+  const factory NameLocalisedFields({
+    String? en,
+    String? np,
+  }) = _NameLocalisedFields;
+
+  factory NameLocalisedFields.fromJson(Map<String, dynamic> json) =>
+      _$NameLocalisedFieldsFromJson(json);
 }

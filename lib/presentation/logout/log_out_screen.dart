@@ -35,6 +35,7 @@ class _LogOutScreenState extends State<LogOutScreen> {
         },
         child: Center(
             child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             DropdownButton(
               value: _currentLocale,

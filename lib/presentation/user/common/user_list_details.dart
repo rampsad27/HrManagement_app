@@ -47,16 +47,8 @@ class _UserListDetailsState extends State<UserListDetails> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.user.name[widget.locale] ??
-                            widget.user.name['en']!, // Default to English
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      Text(
-                        widget.user.position[widget.locale] ??
-                            widget.user.position['en']!, // Default to English
-                        style: const TextStyle(fontSize: 12),
-                      ),
+                      Text(widget.user.details?.en ?? 'neg'),
+                      Text(widget.user.details?.en ?? 'neg')
                     ],
                   ),
                 ),

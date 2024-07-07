@@ -35,16 +35,6 @@ class UserRepository implements IUserRepository {
   }
 
   Map<String, dynamic> _parseUserData(Map<String, dynamic> json) {
-    // Parse multilingual fields
-    Map<String, String> name =
-        (json['name'] as Map<String, dynamic>).cast<String, String>();
-    Map<String, String> position =
-        (json['position'] as Map<String, dynamic>).cast<String, String>();
-
-    // Add the parsed fields back to the main map
-    json['name'] = name;
-    json['position'] = position;
-
     return json;
   }
 }

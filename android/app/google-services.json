@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:521621509248:android:704d2a52aa86c2a9428265",
+        "mobilesdk_app_id": "1:521621509248:android:642c917e88127df0428265",
         "android_client_info": {
-          "package_name": "com.adminpannel.ap"
+          "package_name": "com.example.hr_app_redo"
         }
       },
       "oauth_client": [

@@ -20,28 +20,31 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
         setState(() {
           _selectedIndex = index;
         });
+
+        switch (index) {
+          case 0:
+            context.go('/userlist');
+            break;
+          case 1:
+            // Navigate to chat
+            break;
+          case 2:
+            context.go('/logout');
+            break;
+        }
       },
-      items: [
+      items: const [
         BottomNavigationBarItem(
-          icon: InkWell(
-            onTap: () {
-              context.go('/userlist');
-            },
-            child: const Icon(Icons.home_rounded),
-          ),
-          label: '',
+          icon: Icon(Icons.home_rounded),
+          label: 'Home',
         ),
-        const BottomNavigationBarItem(
+        BottomNavigationBarItem(
           icon: Icon(Icons.chat_outlined),
-          label: '',
+          label: 'Chat',
         ),
         BottomNavigationBarItem(
-          icon: InkWell(
-              onTap: () {
-                context.go('/logout');
-              },
-              child: const Icon(Icons.account_circle_rounded)),
-          label: '',
+          icon: Icon(Icons.account_circle_rounded),
+          label: 'Profile',
         ),
       ],
     );
