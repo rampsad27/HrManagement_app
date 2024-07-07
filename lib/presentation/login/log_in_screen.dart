@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hr_app_redo/data/respository/googleSignIn_repository.dart';
 import 'package:hr_app_redo/presentation/login/bloc/login_bloc.dart';
@@ -80,9 +79,9 @@ class _LogInScreenState extends State<LogInScreen> {
                           child: const Text("LogIn"));
                     },
                   ),
-                  // const SizedBox(
-                  //   height: 10,
-                  // ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   ElevatedButton(
                       onPressed: () async {
                         GoogleSignInRepository googleSignInRepository =
