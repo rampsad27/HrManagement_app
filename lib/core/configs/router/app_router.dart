@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hr_app_redo/presentation/chat/chatUserListScreen.dart';
 import 'package:hr_app_redo/presentation/login/log_in_screen.dart';
 import 'package:hr_app_redo/presentation/logout/log_out_screen.dart';
 import 'package:hr_app_redo/presentation/user/user_detail/user_detail_screen.dart';
@@ -32,6 +33,10 @@ class AppRouter {
             GoRoute(
               path: 'logout',
               builder: (context, state) => const LogOutScreen(),
+            ),
+            GoRoute(
+              path: 'chat',
+              builder: (context, state) => const ChatUserListScreen(),
             )
           ]),
     ],

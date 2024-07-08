@@ -26,7 +26,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
             context.go('/userlist');
             break;
           case 1:
-            // Navigate to chat
+            context.go('/chat');
             break;
           case 2:
             context.go('/logout');

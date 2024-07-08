@@ -64,5 +64,5 @@ Map<String, dynamic> _$$NameLocalisedFieldsImplToJson(
         _$NameLocalisedFieldsImpl instance) =>
     <String, dynamic>{
       'en': instance.en,
-      'np': instance.ne,
+      'ne': instance.ne,
     };

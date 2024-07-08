@@ -20,8 +20,6 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-// String? name,
-// String? position,
   String get appliedDate => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
   int get viber => throw _privateConstructorUsedError;
@@ -362,8 +360,6 @@ class _$UserModelImpl implements _UserModel {
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
-// String? name,
-// String? position,
   @override
   final String appliedDate;
   @override
@@ -493,8 +489,7 @@ abstract class _UserModel implements UserModel {
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
-  @override // String? name,
-// String? position,
+  @override
   String get appliedDate;
   @override
   String get picture;
