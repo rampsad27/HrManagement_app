@@ -8,8 +8,6 @@ part of 'user_model.dart';
 
 _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
     _$UserModelImpl(
-      name: json['name'] as String?,
-      position: json['position'] as String?,
       appliedDate: json['appliedDate'] as String,
       picture: json['picture'] as String,
       viber: (json['viber'] as num).toInt(),
@@ -25,16 +23,17 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       eRelation: json['eRelation'] as String,
       isActive: json['isActive'] as bool,
       isAdmin: json['isAdmin'] as bool,
-      details: json['details'] == null
+      name: json['name'] == null
+          ? null
+          : NameLocalisedFields.fromJson(json['name'] as Map<String, dynamic>),
+      position: json['position'] == null
           ? null
           : NameLocalisedFields.fromJson(
-              json['details'] as Map<String, dynamic>),
+              json['position'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
     <String, dynamic>{
-      'name': instance.name,
-      'position': instance.position,
       'appliedDate': instance.appliedDate,
       'picture': instance.picture,
       'viber': instance.viber,
@@ -50,19 +49,20 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'eRelation': instance.eRelation,
       'isActive': instance.isActive,
       'isAdmin': instance.isAdmin,
-      'details': instance.details,
+      'name': instance.name,
+      'position': instance.position,
     };
 
 _$NameLocalisedFieldsImpl _$$NameLocalisedFieldsImplFromJson(
         Map<String, dynamic> json) =>
     _$NameLocalisedFieldsImpl(
       en: json['en'] as String?,
-      np: json['np'] as String?,
+      ne: json['ne'] as String?,
     );
 
 Map<String, dynamic> _$$NameLocalisedFieldsImplToJson(
         _$NameLocalisedFieldsImpl instance) =>
     <String, dynamic>{
       'en': instance.en,
-      'np': instance.np,
+      'np': instance.ne,
     };

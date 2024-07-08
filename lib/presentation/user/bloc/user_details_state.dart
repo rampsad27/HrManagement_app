@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'user_details_bloc.dart';
 
 enum UserDetailsStateEnum {
@@ -13,28 +12,33 @@ class UserDetailsState extends Equatable {
   final List<UserModel>? userModelList;
   final UserModel? userModel;
   final String? error;
+  final String? locale;
+
   const UserDetailsState({
     this.userDetailsStateEnum,
     this.userModelList,
     this.userModel,
     this.error,
+    this.locale = 'en', // Default to English
   });
 
   @override
   List<Object?> get props =>
-      [userDetailsStateEnum, userModelList, userModel, error];
+      [userDetailsStateEnum, userModelList, userModel, error, locale];
 
   UserDetailsState copyWith({
     UserDetailsStateEnum? userDetailsStateEnum,
     List<UserModel>? userModelList,
     UserModel? userModel,
     String? error,
+    String? locale, // Add locale to copyWith
   }) {
     return UserDetailsState(
       userDetailsStateEnum: userDetailsStateEnum ?? this.userDetailsStateEnum,
       userModelList: userModelList ?? this.userModelList,
       userModel: userModel ?? this.userModel,
       error: error ?? this.error,
+      locale: locale ?? this.locale,
     );
   }
 }

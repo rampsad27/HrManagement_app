@@ -51,7 +51,6 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
                     padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                     child: UserListDetails(
                       user: user,
-                      locale: '',
                     ),
                   ),
                 ),

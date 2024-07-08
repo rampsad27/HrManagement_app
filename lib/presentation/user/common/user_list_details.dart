@@ -1,91 +1,96 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hr_app_redo/data/models/user/user_model.dart';
+import 'package:hr_app_redo/presentation/user/bloc/user_details_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class UserListDetails extends StatefulWidget {
-  final String locale;
+class UserListDetails extends StatelessWidget {
   final UserModel user;
 
   const UserListDetails({
     super.key,
     required this.user,
-    required this.locale,
   });
 
   @override
-  State<UserListDetails> createState() => _UserListDetailsState();
-}
-
-class _UserListDetailsState extends State<UserListDetails> {
-  @override
   Widget build(BuildContext context) {
-    final Uri viber = Uri.parse('viber://add?number=${widget.user.viber}');
-    final Uri whatsapp = Uri.parse('https://wa.me/${widget.user.whatsapp}');
-    final Uri email = Uri(
-      scheme: 'mailto',
-      path: widget.user.email,
-      query: 'subject=Hello&body=Hello%20World',
-    );
+    return BlocBuilder<UserDetailsBloc, UserDetailsState>(
+      builder: (context, state) {
+        final String currentLocale = state.locale ?? 'en';
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.only(left: 6),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+        final Uri viber = Uri.parse('viber://add?number=${user.viber}');
+        final Uri whatsapp = Uri.parse('https://wa.me/${user.whatsapp}');
+        final Uri email = Uri(
+          scheme: 'mailto',
+          path: user.email,
+          query: 'subject=Hello&body=Hello%20World',
+        );
+
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Padding(
+            padding: const EdgeInsets.only(left: 6),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: NetworkImage(widget.user.picture),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      backgroundImage: NetworkImage(user.picture),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(currentLocale == 'ne'
+                              ? user.name?.ne ?? 'नाम उपलब्ध छैन'
+                              : user.name?.en ?? 'Name not available'),
+                          Text(currentLocale == 'ne'
+                              ? user.position?.ne ?? 'पद उपलब्ध छैन'
+                              : user.position?.en ?? 'Position not available'),
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                        onPressed: () {
+                          launchUrl(viber);
+                        },
+                        icon: const FaIcon(
+                          FontAwesomeIcons.viber,
+                          color: Color.fromARGB(255, 166, 140, 170),
+                        )),
+                    IconButton(
+                        onPressed: () {
+                          launchUrl(whatsapp);
+                        },
+                        icon: const FaIcon(
+                          FontAwesomeIcons.whatsapp,
+                          color: Colors.green,
+                        )),
+                    IconButton(
+                        onPressed: () {
+                          launchUrl(email);
+                        },
+                        icon: const FaIcon(
+                          FontAwesomeIcons.envelope,
+                          color: Color.fromARGB(255, 201, 145, 128),
+                        )),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(6.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(widget.user.details?.en ?? 'neg'),
-                      Text(widget.user.details?.en ?? 'neg')
-                    ],
-                  ),
+                const Divider(
+                  color: Colors.grey,
                 ),
-                const Spacer(),
-                IconButton(
-                    onPressed: () {
-                      launchUrl(viber);
-                    },
-                    icon: const FaIcon(
-                      FontAwesomeIcons.viber,
-                      color: Color.fromARGB(255, 166, 140, 170),
-                    )),
-                IconButton(
-                    onPressed: () {
-                      launchUrl(whatsapp);
-                    },
-                    icon: const FaIcon(
-                      FontAwesomeIcons.whatsapp,
-                      color: Colors.green,
-                    )),
-                IconButton(
-                    onPressed: () {
-                      launchUrl(email);
-                    },
-                    icon: const FaIcon(
-                      FontAwesomeIcons.envelope,
-                      color: Color.fromARGB(255, 201, 145, 128),
-                    )),
+                Text('Applied Date: ${user.appliedDate}'),
               ],
             ),
-            const Divider(
-              color: Colors.grey,
-            ),
-            Text('Applied Date: ${widget.user.appliedDate}'),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

@@ -5,8 +5,6 @@ part 'user_model.g.dart';
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
-    String? name,
-    String? position,
     required String appliedDate,
     required String picture,
     required int viber,
@@ -22,7 +20,8 @@ class UserModel with _$UserModel {
     required String eRelation,
     required bool isActive,
     required bool isAdmin,
-    NameLocalisedFields? details,
+    NameLocalisedFields? name,
+    NameLocalisedFields? position,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
@@ -33,7 +32,7 @@ class UserModel with _$UserModel {
 class NameLocalisedFields with _$NameLocalisedFields {
   const factory NameLocalisedFields({
     String? en,
-    String? np,
+    String? ne,
   }) = _NameLocalisedFields;
 
   factory NameLocalisedFields.fromJson(Map<String, dynamic> json) =>

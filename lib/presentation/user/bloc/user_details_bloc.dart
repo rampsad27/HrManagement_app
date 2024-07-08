@@ -44,6 +44,11 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
         ));
       }
     });
+
+    // Handle Locale Change Event
+    on<ChangeLocaleEvent>((event, emit) {
+      emit(state.copyWith(locale: event.locale));
+    });
   }
 
   final IUserRepository _userRepository = getIt.get<IUserRepository>();

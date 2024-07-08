@@ -30,7 +30,7 @@ class _HrManagementAppState extends State<HrManagementApp> {
   }
 
   void configureLocalization() {
-    localization.init(mapLocales: LOCALES, initLanguageCode: "en");
+    localization.init(mapLocales: LOCALES, initLanguageCode: "ne");
     localization.onTranslatedLanguage = onTranslatedLanguage;
   }
 

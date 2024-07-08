@@ -20,8 +20,8 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String? get name => throw _privateConstructorUsedError;
-  String? get position => throw _privateConstructorUsedError;
+// String? name,
+// String? position,
   String get appliedDate => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
   int get viber => throw _privateConstructorUsedError;
@@ -37,7 +37,8 @@ mixin _$UserModel {
   String get eRelation => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
   bool get isAdmin => throw _privateConstructorUsedError;
-  NameLocalisedFields? get details => throw _privateConstructorUsedError;
+  NameLocalisedFields? get name => throw _privateConstructorUsedError;
+  NameLocalisedFields? get position => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,9 +52,7 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String? name,
-      String? position,
-      String appliedDate,
+      {String appliedDate,
       String picture,
       int viber,
       int whatsapp,
@@ -68,9 +67,11 @@ abstract class $UserModelCopyWith<$Res> {
       String eRelation,
       bool isActive,
       bool isAdmin,
-      NameLocalisedFields? details});
+      NameLocalisedFields? name,
+      NameLocalisedFields? position});
 
-  $NameLocalisedFieldsCopyWith<$Res>? get details;
+  $NameLocalisedFieldsCopyWith<$Res>? get name;
+  $NameLocalisedFieldsCopyWith<$Res>? get position;
 }
 
 /// @nodoc
@@ -86,8 +87,6 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? position = freezed,
     Object? appliedDate = null,
     Object? picture = null,
     Object? viber = null,
@@ -103,17 +102,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? eRelation = null,
     Object? isActive = null,
     Object? isAdmin = null,
-    Object? details = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      position: freezed == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as String?,
       appliedDate: null == appliedDate
           ? _value.appliedDate
           : appliedDate // ignore: cast_nullable_to_non_nullable
@@ -174,22 +166,38 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
               as bool,
-      details: freezed == details
-          ? _value.details
-          : details // ignore: cast_nullable_to_non_nullable
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as NameLocalisedFields?,
+      position: freezed == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
               as NameLocalisedFields?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $NameLocalisedFieldsCopyWith<$Res>? get details {
-    if (_value.details == null) {
+  $NameLocalisedFieldsCopyWith<$Res>? get name {
+    if (_value.name == null) {
       return null;
     }
 
-    return $NameLocalisedFieldsCopyWith<$Res>(_value.details!, (value) {
-      return _then(_value.copyWith(details: value) as $Val);
+    return $NameLocalisedFieldsCopyWith<$Res>(_value.name!, (value) {
+      return _then(_value.copyWith(name: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NameLocalisedFieldsCopyWith<$Res>? get position {
+    if (_value.position == null) {
+      return null;
+    }
+
+    return $NameLocalisedFieldsCopyWith<$Res>(_value.position!, (value) {
+      return _then(_value.copyWith(position: value) as $Val);
     });
   }
 }
@@ -203,9 +211,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? name,
-      String? position,
-      String appliedDate,
+      {String appliedDate,
       String picture,
       int viber,
       int whatsapp,
@@ -220,10 +226,13 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String eRelation,
       bool isActive,
       bool isAdmin,
-      NameLocalisedFields? details});
+      NameLocalisedFields? name,
+      NameLocalisedFields? position});
 
   @override
-  $NameLocalisedFieldsCopyWith<$Res>? get details;
+  $NameLocalisedFieldsCopyWith<$Res>? get name;
+  @override
+  $NameLocalisedFieldsCopyWith<$Res>? get position;
 }
 
 /// @nodoc
@@ -237,8 +246,6 @@ class __$$UserModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? position = freezed,
     Object? appliedDate = null,
     Object? picture = null,
     Object? viber = null,
@@ -254,17 +261,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? eRelation = null,
     Object? isActive = null,
     Object? isAdmin = null,
-    Object? details = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
   }) {
     return _then(_$UserModelImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      position: freezed == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as String?,
       appliedDate: null == appliedDate
           ? _value.appliedDate
           : appliedDate // ignore: cast_nullable_to_non_nullable
@@ -325,9 +325,13 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
               as bool,
-      details: freezed == details
-          ? _value.details
-          : details // ignore: cast_nullable_to_non_nullable
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as NameLocalisedFields?,
+      position: freezed == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
               as NameLocalisedFields?,
     ));
   }
@@ -337,9 +341,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
   const _$UserModelImpl(
-      {this.name,
-      this.position,
-      required this.appliedDate,
+      {required this.appliedDate,
       required this.picture,
       required this.viber,
       required this.whatsapp,
@@ -354,15 +356,14 @@ class _$UserModelImpl implements _UserModel {
       required this.eRelation,
       required this.isActive,
       required this.isAdmin,
-      this.details});
+      this.name,
+      this.position});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
-  @override
-  final String? name;
-  @override
-  final String? position;
+// String? name,
+// String? position,
   @override
   final String appliedDate;
   @override
@@ -394,11 +395,13 @@ class _$UserModelImpl implements _UserModel {
   @override
   final bool isAdmin;
   @override
-  final NameLocalisedFields? details;
+  final NameLocalisedFields? name;
+  @override
+  final NameLocalisedFields? position;
 
   @override
   String toString() {
-    return 'UserModel(name: $name, position: $position, appliedDate: $appliedDate, picture: $picture, viber: $viber, whatsapp: $whatsapp, cell: $cell, email: $email, address: $address, github: $github, linkedIn: $linkedIn, bio: $bio, eName: $eName, eNumber: $eNumber, eRelation: $eRelation, isActive: $isActive, isAdmin: $isAdmin, details: $details)';
+    return 'UserModel(appliedDate: $appliedDate, picture: $picture, viber: $viber, whatsapp: $whatsapp, cell: $cell, email: $email, address: $address, github: $github, linkedIn: $linkedIn, bio: $bio, eName: $eName, eNumber: $eNumber, eRelation: $eRelation, isActive: $isActive, isAdmin: $isAdmin, name: $name, position: $position)';
   }
 
   @override
@@ -406,9 +409,6 @@ class _$UserModelImpl implements _UserModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserModelImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
             (identical(other.appliedDate, appliedDate) ||
                 other.appliedDate == appliedDate) &&
             (identical(other.picture, picture) || other.picture == picture) &&
@@ -429,15 +429,15 @@ class _$UserModelImpl implements _UserModel {
             (identical(other.isActive, isActive) ||
                 other.isActive == isActive) &&
             (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin) &&
-            (identical(other.details, details) || other.details == details));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.position, position) ||
+                other.position == position));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      name,
-      position,
       appliedDate,
       picture,
       viber,
@@ -453,7 +453,8 @@ class _$UserModelImpl implements _UserModel {
       eRelation,
       isActive,
       isAdmin,
-      details);
+      name,
+      position);
 
   @JsonKey(ignore: true)
   @override
@@ -471,9 +472,7 @@ class _$UserModelImpl implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {final String? name,
-      final String? position,
-      required final String appliedDate,
+      {required final String appliedDate,
       required final String picture,
       required final int viber,
       required final int whatsapp,
@@ -488,16 +487,14 @@ abstract class _UserModel implements UserModel {
       required final String eRelation,
       required final bool isActive,
       required final bool isAdmin,
-      final NameLocalisedFields? details}) = _$UserModelImpl;
+      final NameLocalisedFields? name,
+      final NameLocalisedFields? position}) = _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
-  @override
-  String? get name;
-  @override
-  String? get position;
-  @override
+  @override // String? name,
+// String? position,
   String get appliedDate;
   @override
   String get picture;
@@ -528,7 +525,9 @@ abstract class _UserModel implements UserModel {
   @override
   bool get isAdmin;
   @override
-  NameLocalisedFields? get details;
+  NameLocalisedFields? get name;
+  @override
+  NameLocalisedFields? get position;
   @override
   @JsonKey(ignore: true)
   _$$UserModelImplCopyWith<_$UserModelImpl> get copyWith =>
@@ -542,7 +541,7 @@ NameLocalisedFields _$NameLocalisedFieldsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NameLocalisedFields {
   String? get en => throw _privateConstructorUsedError;
-  String? get np => throw _privateConstructorUsedError;
+  String? get ne => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -556,7 +555,7 @@ abstract class $NameLocalisedFieldsCopyWith<$Res> {
           NameLocalisedFields value, $Res Function(NameLocalisedFields) then) =
       _$NameLocalisedFieldsCopyWithImpl<$Res, NameLocalisedFields>;
   @useResult
-  $Res call({String? en, String? np});
+  $Res call({String? en, String? ne});
 }
 
 /// @nodoc
@@ -573,16 +572,16 @@ class _$NameLocalisedFieldsCopyWithImpl<$Res, $Val extends NameLocalisedFields>
   @override
   $Res call({
     Object? en = freezed,
-    Object? np = freezed,
+    Object? ne = freezed,
   }) {
     return _then(_value.copyWith(
       en: freezed == en
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
               as String?,
-      np: freezed == np
-          ? _value.np
-          : np // ignore: cast_nullable_to_non_nullable
+      ne: freezed == ne
+          ? _value.ne
+          : ne // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -596,7 +595,7 @@ abstract class _$$NameLocalisedFieldsImplCopyWith<$Res>
       __$$NameLocalisedFieldsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? en, String? np});
+  $Res call({String? en, String? ne});
 }
 
 /// @nodoc
@@ -611,16 +610,16 @@ class __$$NameLocalisedFieldsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? en = freezed,
-    Object? np = freezed,
+    Object? ne = freezed,
   }) {
     return _then(_$NameLocalisedFieldsImpl(
       en: freezed == en
           ? _value.en
           : en // ignore: cast_nullable_to_non_nullable
               as String?,
-      np: freezed == np
-          ? _value.np
-          : np // ignore: cast_nullable_to_non_nullable
+      ne: freezed == ne
+          ? _value.ne
+          : ne // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -629,7 +628,7 @@ class __$$NameLocalisedFieldsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NameLocalisedFieldsImpl implements _NameLocalisedFields {
-  const _$NameLocalisedFieldsImpl({this.en, this.np});
+  const _$NameLocalisedFieldsImpl({this.en, this.ne});
 
   factory _$NameLocalisedFieldsImpl.fromJson(Map<String, dynamic> json) =>
       _$$NameLocalisedFieldsImplFromJson(json);
@@ -637,11 +636,11 @@ class _$NameLocalisedFieldsImpl implements _NameLocalisedFields {
   @override
   final String? en;
   @override
-  final String? np;
+  final String? ne;
 
   @override
   String toString() {
-    return 'NameLocalisedFields(en: $en, np: $np)';
+    return 'NameLocalisedFields(en: $en, ne: $ne)';
   }
 
   @override
@@ -650,12 +649,12 @@ class _$NameLocalisedFieldsImpl implements _NameLocalisedFields {
         (other.runtimeType == runtimeType &&
             other is _$NameLocalisedFieldsImpl &&
             (identical(other.en, en) || other.en == en) &&
-            (identical(other.np, np) || other.np == np));
+            (identical(other.ne, ne) || other.ne == ne));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, en, np);
+  int get hashCode => Object.hash(runtimeType, en, ne);
 
   @JsonKey(ignore: true)
   @override
@@ -673,7 +672,7 @@ class _$NameLocalisedFieldsImpl implements _NameLocalisedFields {
 }
 
 abstract class _NameLocalisedFields implements NameLocalisedFields {
-  const factory _NameLocalisedFields({final String? en, final String? np}) =
+  const factory _NameLocalisedFields({final String? en, final String? ne}) =
       _$NameLocalisedFieldsImpl;
 
   factory _NameLocalisedFields.fromJson(Map<String, dynamic> json) =
@@ -682,7 +681,7 @@ abstract class _NameLocalisedFields implements NameLocalisedFields {
   @override
   String? get en;
   @override
-  String? get np;
+  String? get ne;
   @override
   @JsonKey(ignore: true)
   _$$NameLocalisedFieldsImplCopyWith<_$NameLocalisedFieldsImpl> get copyWith =>
