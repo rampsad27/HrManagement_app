@@ -67,6 +67,17 @@ class _LogInScreenState extends State<LogInScreen> {
                         border: OutlineInputBorder(),
                         hintText: 'Password'),
                   ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                        onPressed: () {
+                          context.go('/forgotpassword');
+                        },
+                        child: const Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Colors.blue),
+                        )),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
