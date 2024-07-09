@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hr_app_redo/presentation/common/bottom_navigation_bar.dart';
-import 'chatScreen.dart'; // Ensure this import path is correct
+import 'chatScreen.dart';
 
 class ChatUserListScreen extends StatefulWidget {
   const ChatUserListScreen({super.key});
@@ -43,7 +43,6 @@ class _ChatUserListScreenState extends State<ChatUserListScreen> {
 
         List<DocumentSnapshot> userDocs = snapshot.data!.docs;
         String currentUserEmail = _auth.currentUser?.email ?? '';
-        const Spacer();
         return ListView(
           children: userDocs
               .where((doc) => doc['email'] != currentUserEmail)
@@ -58,8 +57,7 @@ class _ChatUserListScreenState extends State<ChatUserListScreen> {
   Widget _buildUserListItem(DocumentSnapshot document) {
     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
     if (_auth.currentUser!.email != data['email']) {
-      return ListTile(
-        title: Text(data['email']),
+      return GestureDetector(
         onTap: () {
           Navigator.push(
             context,
@@ -71,6 +69,29 @@ class _ChatUserListScreenState extends State<ChatUserListScreen> {
             ),
           );
         },
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: Colors.blueAccent,
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: const [
+              // BoxShadow(
+              //   color: Colors.grey.withOpacity(0.5),
+              //   spreadRadius: 2,
+              //   blurRadius: 5,
+              //   offset: const Offset(0, 3),
+              // ),
+            ],
+          ),
+          child: Text(
+            data['email'],
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+            ),
+          ),
+        ),
       );
     } else {
       return Container();
