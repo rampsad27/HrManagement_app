@@ -20,6 +20,7 @@ class UserModel with _$UserModel {
     required String eRelation,
     required bool isActive,
     required bool isAdmin,
+    required String uid,
     NameLocalisedFields? name,
     NameLocalisedFields? position,
   }) = _UserModel;

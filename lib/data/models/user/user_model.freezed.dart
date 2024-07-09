@@ -35,6 +35,7 @@ mixin _$UserModel {
   String get eRelation => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
   bool get isAdmin => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
   NameLocalisedFields? get name => throw _privateConstructorUsedError;
   NameLocalisedFields? get position => throw _privateConstructorUsedError;
 
@@ -65,6 +66,7 @@ abstract class $UserModelCopyWith<$Res> {
       String eRelation,
       bool isActive,
       bool isAdmin,
+      String uid,
       NameLocalisedFields? name,
       NameLocalisedFields? position});
 
@@ -100,6 +102,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? eRelation = null,
     Object? isActive = null,
     Object? isAdmin = null,
+    Object? uid = null,
     Object? name = freezed,
     Object? position = freezed,
   }) {
@@ -164,6 +167,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
               as bool,
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -224,6 +231,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       String eRelation,
       bool isActive,
       bool isAdmin,
+      String uid,
       NameLocalisedFields? name,
       NameLocalisedFields? position});
 
@@ -259,6 +267,7 @@ class __$$UserModelImplCopyWithImpl<$Res>
     Object? eRelation = null,
     Object? isActive = null,
     Object? isAdmin = null,
+    Object? uid = null,
     Object? name = freezed,
     Object? position = freezed,
   }) {
@@ -323,6 +332,10 @@ class __$$UserModelImplCopyWithImpl<$Res>
           ? _value.isAdmin
           : isAdmin // ignore: cast_nullable_to_non_nullable
               as bool,
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -354,6 +367,7 @@ class _$UserModelImpl implements _UserModel {
       required this.eRelation,
       required this.isActive,
       required this.isAdmin,
+      required this.uid,
       this.name,
       this.position});
 
@@ -391,13 +405,15 @@ class _$UserModelImpl implements _UserModel {
   @override
   final bool isAdmin;
   @override
+  final String uid;
+  @override
   final NameLocalisedFields? name;
   @override
   final NameLocalisedFields? position;
 
   @override
   String toString() {
-    return 'UserModel(appliedDate: $appliedDate, picture: $picture, viber: $viber, whatsapp: $whatsapp, cell: $cell, email: $email, address: $address, github: $github, linkedIn: $linkedIn, bio: $bio, eName: $eName, eNumber: $eNumber, eRelation: $eRelation, isActive: $isActive, isAdmin: $isAdmin, name: $name, position: $position)';
+    return 'UserModel(appliedDate: $appliedDate, picture: $picture, viber: $viber, whatsapp: $whatsapp, cell: $cell, email: $email, address: $address, github: $github, linkedIn: $linkedIn, bio: $bio, eName: $eName, eNumber: $eNumber, eRelation: $eRelation, isActive: $isActive, isAdmin: $isAdmin, uid: $uid, name: $name, position: $position)';
   }
 
   @override
@@ -425,6 +441,7 @@ class _$UserModelImpl implements _UserModel {
             (identical(other.isActive, isActive) ||
                 other.isActive == isActive) &&
             (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.position, position) ||
                 other.position == position));
@@ -449,6 +466,7 @@ class _$UserModelImpl implements _UserModel {
       eRelation,
       isActive,
       isAdmin,
+      uid,
       name,
       position);
 
@@ -483,6 +501,7 @@ abstract class _UserModel implements UserModel {
       required final String eRelation,
       required final bool isActive,
       required final bool isAdmin,
+      required final String uid,
       final NameLocalisedFields? name,
       final NameLocalisedFields? position}) = _$UserModelImpl;
 
@@ -519,6 +538,8 @@ abstract class _UserModel implements UserModel {
   bool get isActive;
   @override
   bool get isAdmin;
+  @override
+  String get uid;
   @override
   NameLocalisedFields? get name;
   @override

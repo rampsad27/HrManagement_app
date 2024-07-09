@@ -3,15 +3,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hr_app_redo/data/respository/chat_repository.dart';
 import 'package:hr_app_redo/presentation/chat/chat_bubble.dart';
-import 'package:hr_app_redo/presentation/chat/services/chat_service.dart';
 
 class ChatPage extends StatefulWidget {
   final String receiverUserEmail;
+  final String receiverUserId;
 
   const ChatPage({
     super.key,
     required this.receiverUserEmail,
+    required this.receiverUserId,
   });
 
   @override
@@ -37,9 +39,7 @@ class _ChatPageState extends State<ChatPage> {
               ),
               //userInput
               _buildMessageInput(),
-              const SizedBox(
-                height: 25,
-              )
+              const SizedBox(height: 25)
             ],
           ),
         ));
@@ -49,7 +49,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget _buildMessageList() {
     return StreamBuilder(
         stream: _chatService.getMessages(
-            widget.receiverUserEmail, _firebaseAuth.currentUser!.uid),
+            _firebaseAuth.currentUser!.uid, widget.receiverUserId),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return Text('Error ${snapshot.error}');
@@ -114,7 +114,7 @@ class _ChatPageState extends State<ChatPage> {
     //only send msh if tehres is smth to send
     if (_messageController.text.isNotEmpty) {
       await _chatService.sendMessage(
-          widget.receiverUserEmail, _messageController.text);
+          widget.receiverUserId, _messageController.text);
       //clear the text controller
       _messageController.clear();
     }

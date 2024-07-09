@@ -13,7 +13,7 @@ class ChatService extends ChangeNotifier {
 // get current user info |
     final String currentUserId = _firebaseAuth.currentUser!.uid;
     final String currentUserEmail = _firebaseAuth.currentUser!.email.toString();
-    final Timestamp timestamp = Timestamp.now();
+    final Timestamp timestamp = Timestamp.now(); //to show in order
 
 // create a new message |
     Message newMessage = Message(
@@ -26,7 +26,7 @@ class ChatService extends ChangeNotifier {
 
 // construct chat room id from current user id and receiver id (sorted to ensure uniqueness) |
     List<String> ids = [currentUserId, receiverId];
-    ids.sort();
+    ids.sort(); //sm = ms
     String chatRoomId = ids.join("_");
     //add new messages to database
     await _fireStore

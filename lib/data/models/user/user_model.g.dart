@@ -23,6 +23,7 @@ _$UserModelImpl _$$UserModelImplFromJson(Map<String, dynamic> json) =>
       eRelation: json['eRelation'] as String,
       isActive: json['isActive'] as bool,
       isAdmin: json['isAdmin'] as bool,
+      uid: json['uid'] as String,
       name: json['name'] == null
           ? null
           : NameLocalisedFields.fromJson(json['name'] as Map<String, dynamic>),
@@ -49,6 +50,7 @@ Map<String, dynamic> _$$UserModelImplToJson(_$UserModelImpl instance) =>
       'eRelation': instance.eRelation,
       'isActive': instance.isActive,
       'isAdmin': instance.isAdmin,
+      'uid': instance.uid,
       'name': instance.name,
       'position': instance.position,
     };

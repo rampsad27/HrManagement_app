@@ -66,6 +66,7 @@ class _ChatUserListScreenState extends State<ChatUserListScreen> {
             MaterialPageRoute(
               builder: (context) => ChatPage(
                 receiverUserEmail: data['email'],
+                receiverUserId: data['uid'],
               ),
             ),
           );
