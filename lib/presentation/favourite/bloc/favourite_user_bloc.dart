@@ -17,7 +17,7 @@ class FavouriteUserBloc extends Bloc<FavouriteUserEvent, FavouriteUserState> {
 
       final currentUser = FirebaseAuth.instance.currentUser;
       if (currentUser == null) {
-        log("No authenticated user found");
+        log("No user ");
         return;
       }
 

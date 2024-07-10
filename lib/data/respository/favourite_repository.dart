@@ -15,15 +15,16 @@ class FavouriteUserRepository implements IFavouriteUserRepository {
       log("Attempting to save favourite user list: ${favouriteUserModel.toJson()}");
       final currentUser = _auth.currentUser;
       if (currentUser == null) {
-        log("No authenticated user found");
+        log("No  user ");
         return;
       }
-      log("Authenticated user: ${favouriteUserModel.toJson()}");
 
       final docRef =
           _firestore.collection('favouriteUser').doc(currentUser.email);
-      await docRef.set(favouriteUserModel.toJson(), SetOptions(merge: true));
-      log("Favourite user list saved successfully");
+
+      await docRef.set(favouriteUserModel.toJson(),
+          SetOptions(merge: true)); //1 user matra aayo
+      log("Favouritesaved ");
     } on FirebaseException catch (e) {
       log("FirebaseException: ${e.toString()}");
     } on Exception catch (e) {

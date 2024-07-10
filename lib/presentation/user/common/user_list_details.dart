@@ -91,12 +91,27 @@ class UserListDetails extends StatelessWidget {
                     const Spacer(),
                     BlocBuilder<FavouriteUserBloc, FavouriteUserState>(
                       builder: (context, state) {
+                        final isFavorited = state.favouriteUserModel?.emails
+                                .contains(user.email) ??
+                            false;
                         return IconButton(
-                          icon: const Icon(Icons.favorite_outline_rounded),
+                          icon: Icon(
+                            isFavorited
+                                ? Icons.favorite_rounded
+                                : Icons.favorite_outline_rounded,
+                            color: isFavorited ? Colors.red : null,
+                          ),
                           onPressed: () {
-                            context.read<FavouriteUserBloc>().add(
-                                  AddToFavouriteUserEvent(email: user.email),
-                                );
+                            if (isFavorited) {
+                              context.read<FavouriteUserBloc>().add(
+                                    DeleteFavouriteUserByEmail(
+                                        email: user.email),
+                                  );
+                            } else {
+                              context.read<FavouriteUserBloc>().add(
+                                    AddToFavouriteUserEvent(email: user.email),
+                                  );
+                            }
                           },
                         );
                       },
