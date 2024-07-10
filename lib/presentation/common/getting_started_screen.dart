@@ -34,7 +34,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 39, 38, 38),
+      backgroundColor: const Color.fromARGB(255, 184, 211, 216),
       body: Stack(
         children: [
           Center(
@@ -48,11 +48,11 @@ class _GettingStartedScreenState extends State<GettingStartedScreen>
                     style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 0, 0, 0),
                       shadows: [
                         Shadow(
                           blurRadius: 10.0,
-                          color: Colors.black,
+                          color: Colors.blueGrey,
                           offset: Offset(5.0, 5.0),
                         ),
                       ],
@@ -63,7 +63,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen>
                     'Manage your HR needs efficiently',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white70,
+                      color: Color.fromARGB(179, 30, 29, 29),
                     ),
                   ),
                   const SizedBox(height: 40),

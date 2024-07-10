@@ -11,7 +11,7 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
   UserDetailsBloc() : super(const UserDetailsState()) {
     on<GetUserEvent>((event, emit) async {
       try {
-        await emit.forEach(_userRepository.getRealTimeStreamData(),
+        await emit.forEach(userRepository.getRealTimeStreamData(),
             onData: (data) {
           return state.copyWith(
               userDetailsStateEnum: UserDetailsStateEnum.success,
@@ -32,7 +32,7 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
       try {
         emit(
             state.copyWith(userDetailsStateEnum: UserDetailsStateEnum.loading));
-        var res = await _userRepository.getUserById(event.email);
+        var res = await userRepository.getUserById(event.email);
         emit(state.copyWith(
           userDetailsStateEnum: UserDetailsStateEnum.success,
           userModel: res,
@@ -51,5 +51,5 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
     });
   }
 
-  final IUserRepository _userRepository = getIt.get<IUserRepository>();
+  final IUserRepository userRepository = getIt.get<IUserRepository>();
 }

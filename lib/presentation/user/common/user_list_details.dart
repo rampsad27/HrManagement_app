@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hr_app_redo/data/models/user/user_model.dart';
+import 'package:hr_app_redo/presentation/favourite/bloc/favourite_user_bloc.dart';
 import 'package:hr_app_redo/presentation/user/bloc/user_details_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,7 +19,6 @@ class UserListDetails extends StatelessWidget {
     return BlocBuilder<UserDetailsBloc, UserDetailsState>(
       builder: (context, state) {
         final String currentLocale = state.locale ?? 'en';
-
         final Uri viber = Uri.parse('viber://add?number=${user.viber}');
         final Uri whatsapp = Uri.parse('https://wa.me/${user.whatsapp}');
         final Uri email = Uri(
@@ -85,7 +85,24 @@ class UserListDetails extends StatelessWidget {
                 const Divider(
                   color: Colors.grey,
                 ),
-                Text('Applied Date: ${user.appliedDate}'),
+                Row(
+                  children: [
+                    Text('Applied Date: ${user.appliedDate}'),
+                    const Spacer(),
+                    BlocBuilder<FavouriteUserBloc, FavouriteUserState>(
+                      builder: (context, state) {
+                        return IconButton(
+                          icon: const Icon(Icons.favorite_outline_rounded),
+                          onPressed: () {
+                            context.read<FavouriteUserBloc>().add(
+                                  AddToFavouriteUserEvent(email: user.email),
+                                );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

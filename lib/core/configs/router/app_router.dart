@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hr_app_redo/presentation/chat/chatUserListScreen.dart';
 import 'package:hr_app_redo/presentation/common/getting_started_screen.dart';
+import 'package:hr_app_redo/presentation/favourite/favourite_screen.dart';
 import 'package:hr_app_redo/presentation/login/forgot_password_screen.dart';
 import 'package:hr_app_redo/presentation/login/log_in_screen.dart';
 import 'package:hr_app_redo/presentation/logout/log_out_screen.dart';
@@ -37,6 +38,10 @@ class AppRouter {
                     },
                   ),
                 ]),
+            GoRoute(
+              path: 'favourite',
+              builder: (context, state) => const FavouriteScreen(),
+            ),
             GoRoute(
               path: 'logout',
               builder: (context, state) => const LogOutScreen(),

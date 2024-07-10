@@ -25,10 +25,8 @@ class _ListViewVerticalState extends State<ListViewVertical> {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state.userModelList != null
-            //  &&
-            //     state.userModelList!.isNotEmpty
-            ) {
+        } else if (state.userModelList != null &&
+            state.userModelList!.isNotEmpty) {
           return ListView.builder(
             itemCount: state.userModelList!.length,
             itemBuilder: (context, index) {
@@ -39,7 +37,7 @@ class _ListViewVerticalState extends State<ListViewVertical> {
                 },
                 child: Container(
                   height: 140,
-                  margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  margin: const EdgeInsets.fromLTRB(8, 10, 8, 0),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),

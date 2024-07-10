@@ -29,6 +29,9 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
             context.go('/chat');
             break;
           case 2:
+            context.go('/favourite');
+            break;
+          case 3:
             context.go('/logout');
             break;
         }
@@ -41,6 +44,10 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
         BottomNavigationBarItem(
           icon: Icon(Icons.chat_outlined),
           label: 'Chat',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.favorite_outline_rounded),
+          label: 'Favourite',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.account_circle_rounded),
