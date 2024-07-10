@@ -71,19 +71,20 @@ class FavouriteUserRepository implements IFavouriteUserRepository {
         return;
       }
 
-      final DocumentSnapshot docSnapshot = await _firestore
-          .collection('favouriteUser')
-          .doc(currentUser.email)
-          .get();
+      final docRef =
+          _firestore.collection('favouriteUser').doc(currentUser.email);
+      final docSnapshot = await docRef.get();
 
       if (docSnapshot.exists) {
-        FavouriteUserModel favouriteUserModel = FavouriteUserModel.fromJson(
-            docSnapshot.data() as Map<String, dynamic>);
-        favouriteUserModel.emails.remove(email);
-        await _firestore
-            .collection('favouriteUser')
-            .doc(currentUser.email)
-            .set(favouriteUserModel.toJson());
+        List<dynamic> emails =
+            (docSnapshot.data() as Map<String, dynamic>)['emails'] ?? [];
+
+        // Remove the email from the list
+        emails.remove(email);
+
+        // Update the Firestore document with the modified list
+        await docRef.update({'emails': emails});
+
         log("Favourite user removed successfully");
       } else {
         log("No favourite users found to delete");
