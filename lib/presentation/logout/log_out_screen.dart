@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hr_app_redo/presentation/common/bottom_navigation_bar.dart';
-import 'package:hr_app_redo/presentation/login/bloc/login_bloc.dart';
-import 'package:hr_app_redo/presentation/user/bloc/user_details_bloc.dart';
+import 'package:HrManagement/presentation/common/bottom_navigation_bar.dart';
+import 'package:HrManagement/presentation/login/bloc/login_bloc.dart';
+import 'package:HrManagement/presentation/user/bloc/user_details_bloc.dart';
 
 class LogOutScreen extends StatefulWidget {
   const LogOutScreen({super.key});

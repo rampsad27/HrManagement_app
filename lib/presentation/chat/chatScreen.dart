@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:hr_app_redo/data/respository/chat_repository.dart';
-import 'package:hr_app_redo/presentation/chat/chat_bubble.dart';
+import 'package:HrManagement/data/respository/chat_repository.dart';
+import 'package:HrManagement/presentation/chat/chat_bubble.dart';
 
 class ChatPage extends StatefulWidget {
   final String receiverUserEmail;

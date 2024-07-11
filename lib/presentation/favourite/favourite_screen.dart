@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hr_app_redo/presentation/common/bottom_navigation_bar.dart';
-import 'package:hr_app_redo/presentation/favourite/bloc/favourite_user_bloc.dart';
-import 'package:hr_app_redo/presentation/user/common/user_list_details.dart';
+import 'package:HrManagement/presentation/common/bottom_navigation_bar.dart';
+import 'package:HrManagement/presentation/favourite/bloc/favourite_user_bloc.dart';
 
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({super.key});

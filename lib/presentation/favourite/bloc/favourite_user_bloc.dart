@@ -2,9 +2,9 @@ import 'dart:developer';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hr_app_redo/core/service_locator/service_locator.dart';
-import 'package:hr_app_redo/data/models/favourite/favourite_user_model.dart';
-import 'package:hr_app_redo/domain/repository/ifavourite_repository.dart';
+import 'package:HrManagement/core/service_locator/service_locator.dart';
+import 'package:HrManagement/data/models/favourite/favourite_user_model.dart';
+import 'package:HrManagement/domain/repository/ifavourite_repository.dart';
 
 part 'favourite_user_event.dart';
 part 'favourite_user_state.dart';
@@ -25,6 +25,8 @@ class FavouriteUserBloc extends Bloc<FavouriteUserEvent, FavouriteUserState> {
       try {
         await favouriteUserRepository.addToFavouriteUserEvent(
             currentUser.email!, favouriteUserModel);
+        // currentUser.uid, event.email, favouriteUserModel.toJson()
+
         emit(state.copyWith(
             favouriteUserStateEnum: FavouriteUserStateEnum.success));
       } catch (e) {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hr_app_redo/data/models/user/user_model.dart';
-import 'package:hr_app_redo/presentation/favourite/bloc/favourite_user_bloc.dart';
-import 'package:hr_app_redo/presentation/user/bloc/user_details_bloc.dart';
+import 'package:HrManagement/data/models/user/user_model.dart';
+import 'package:HrManagement/presentation/favourite/bloc/favourite_user_bloc.dart';
+import 'package:HrManagement/presentation/user/bloc/user_details_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UserListDetails extends StatelessWidget {

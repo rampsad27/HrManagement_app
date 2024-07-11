@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:hr_app_redo/presentation/common/bottom_navigation_bar.dart';
+import 'package:HrManagement/presentation/common/bottom_navigation_bar.dart';
 import 'chatScreen.dart';
 
 class ChatUserListScreen extends StatefulWidget {

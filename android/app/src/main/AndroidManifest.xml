@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="hr_app_redo"
+        android:label="Hr Management"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

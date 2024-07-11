@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hr_app_redo/core/service_locator/service_locator.dart';
-import 'package:hr_app_redo/domain/repository/ilogin_repository.dart';
+import 'package:HrManagement/core/service_locator/service_locator.dart';
+import 'package:HrManagement/domain/repository/ilogin_repository.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

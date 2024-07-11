@@ -1,4 +1,4 @@
-# hr_app_redo
+# HrManagement
 
 A new Flutter project.
 

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hr_app_redo/data/models/user/user_model.dart';
-import 'package:hr_app_redo/domain/repository/iuser_repository.dart';
+import 'package:HrManagement/data/models/user/user_model.dart';
+import 'package:HrManagement/domain/repository/iuser_repository.dart';
 
 class UserRepository implements IUserRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

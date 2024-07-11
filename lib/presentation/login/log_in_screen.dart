@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hr_app_redo/data/respository/googleSignIn_repository.dart';
-import 'package:hr_app_redo/presentation/login/bloc/login_bloc.dart';
+import 'package:HrManagement/data/respository/googleSignIn_repository.dart';
+import 'package:HrManagement/presentation/login/bloc/login_bloc.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});

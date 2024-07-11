@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hr_app_redo/presentation/chat/chatUserListScreen.dart';
-import 'package:hr_app_redo/presentation/common/getting_started_screen.dart';
-import 'package:hr_app_redo/presentation/favourite/favourite_screen.dart';
-import 'package:hr_app_redo/presentation/login/forgot_password_screen.dart';
-import 'package:hr_app_redo/presentation/login/log_in_screen.dart';
-import 'package:hr_app_redo/presentation/logout/log_out_screen.dart';
-import 'package:hr_app_redo/presentation/user/user_detail/user_detail_screen.dart';
-import 'package:hr_app_redo/presentation/user/user_list/user_list_screen.dart';
+import 'package:HrManagement/presentation/chat/chatUserListScreen.dart';
+import 'package:HrManagement/presentation/common/getting_started_screen.dart';
+import 'package:HrManagement/presentation/favourite/favourite_screen.dart';
+import 'package:HrManagement/presentation/login/forgot_password_screen.dart';
+import 'package:HrManagement/presentation/login/log_in_screen.dart';
+import 'package:HrManagement/presentation/logout/log_out_screen.dart';
+import 'package:HrManagement/presentation/user/user_detail/user_detail_screen.dart';
+import 'package:HrManagement/presentation/user/user_list/user_list_screen.dart';
 
 class AppRouter {
   static final GlobalKey<NavigatorState> navigatorKey =
@@ -19,13 +19,8 @@ class AppRouter {
     routes: <RouteBase>[
       GoRoute(
           path: '/',
-          builder: (context, state) =>
-              const GettingStartedScreen(), // Define the getting started screen route
+          builder: (context, state) => const LogInScreen(),
           routes: [
-            GoRoute(
-              path: 'login',
-              builder: (context, state) => const LogInScreen(),
-            ),
             GoRoute(
                 path: 'userlist',
                 builder: (context, state) => const UserListScreen(),

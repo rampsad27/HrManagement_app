@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:hr_app_redo/core/configs/localization/locales.dart';
-import 'package:hr_app_redo/core/configs/router/app_router.dart';
+import 'package:HrManagement/core/configs/localization/locales.dart';
+import 'package:HrManagement/core/configs/router/app_router.dart';
 
 class HrManagementApp extends StatefulWidget {
   const HrManagementApp({super.key});

@@ -1,4 +1,4 @@
-import 'package:hr_app_redo/data/models/user/user_model.dart';
+import 'package:HrManagement/data/models/user/user_model.dart';
 
 abstract interface class IUserRepository {
   Future<List<UserModel>?> getUser();

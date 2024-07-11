@@ -1,6 +1,6 @@
 {
-    "name": "hr_app_redo",
-    "short_name": "hr_app_redo",
+    "name": "HrManagement",
+    "short_name": "HrManagement",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

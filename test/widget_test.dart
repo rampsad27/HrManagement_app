@@ -7,9 +7,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hr_app_redo/core/app/app.dart';
+import 'package:HrManagement/core/app/app.dart';
 
-import 'package:hr_app_redo/main.dart';
+import 'package:HrManagement/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

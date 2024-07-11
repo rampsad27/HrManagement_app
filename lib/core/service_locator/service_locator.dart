@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:hr_app_redo/core/configs/initializer/init_bloc.dart';
-import 'package:hr_app_redo/core/configs/initializer/init_repository.dart';
+import 'package:HrManagement/core/configs/initializer/init_bloc.dart';
+import 'package:HrManagement/core/configs/initializer/init_repository.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 

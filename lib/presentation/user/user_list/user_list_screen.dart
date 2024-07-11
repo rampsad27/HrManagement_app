@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:hr_app_redo/presentation/common/bottom_navigation_bar.dart';
-import 'package:hr_app_redo/presentation/user/user_list/widgets/list_view_builder.dart';
+import 'package:HrManagement/presentation/common/bottom_navigation_bar.dart';
+import 'package:HrManagement/presentation/user/user_list/widgets/list_view_builder.dart';
 
 class UserListScreen extends StatefulWidget {
   const UserListScreen({super.key});

@@ -1,14 +1,23 @@
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:hr_app_redo/data/models/favourite/favourite_user_model.dart';
-import 'package:hr_app_redo/domain/repository/ifavourite_repository.dart';
+import 'package:HrManagement/data/models/favourite/favourite_user_model.dart';
+import 'package:HrManagement/domain/repository/ifavourite_repository.dart';
 
 class FavouriteUserRepository implements IFavouriteUserRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
+  //! tring for email in a list
+  // Future<void> addToFavouriteUserEvent(
+  //     String userId, String itemId, Map<String, dynamic> itemDetails) async {
+  //   CollectionReference favorites = FirebaseFirestore.instance
+  //       .collection('usersfav')
+  //       .doc(userId)
+  //       .collection('favorites');
+  //   await favorites.doc(itemId).set(itemDetails);
+  // }
   Future<void> addToFavouriteUserEvent(
       String email, FavouriteUserModel favouriteUserModel) async {
     try {
@@ -34,6 +43,13 @@ class FavouriteUserRepository implements IFavouriteUserRepository {
 
   @override
   Future<FavouriteUserModel?> getFavouriteUserByEmail() async {
+    // final currentUser = _auth.currentUser;
+    // CollectionReference favorites = FirebaseFirestore.instance
+    //     .collection('usersfav')
+    //     .doc(currentUser?.uid)
+    //     .collection('favorites');
+    // QuerySnapshot querySnapshot = await favorites.get();
+    // return null;
     try {
       final currentUser = _auth.currentUser;
       if (currentUser == null) {
